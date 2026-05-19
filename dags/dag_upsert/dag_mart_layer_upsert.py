@@ -5,6 +5,13 @@ from airflow.utils.task_group import TaskGroup
 import src.constants as const
 from src.common import update_hwm, get_params_for_update_hwm, generate_dbt_command
 
+"""
+The DAG has second pipeline:
+
+ - Running dbt models to upsert data from core layer to mart layer;
+
+ - Update rows in high_watermark table for each mart table.
+"""
 with DAG(
         dag_id=const.DAG_MART_ID,
         schedule=None,

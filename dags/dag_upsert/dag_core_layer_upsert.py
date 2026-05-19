@@ -7,12 +7,22 @@ from datetime import datetime
 import src.constants as const
 from src.common import update_hwm, get_params_for_update_hwm, generate_dbt_command
 
+"""
+The DAG has second pipeline:
+
+ - Running dbt models to upsert data from stage layer to core layer;
+ 
+ - Update rows in high_watermark table for each core table;
+ 
+ - Trigger next DAG that run pipeline for mart layer.
+"""
 with DAG(
         dag_id=const.DAG_CORE_ID,
         start_date=datetime(2025, 1, 1),
         schedule="@daily",
         catchup=False,
 ) as dag:
+
     dbt_run = BashOperator(
         task_id=const.UPSERT_DATA_TASK_ID,
         bash_command=generate_dbt_command(const.CORE_LAYER_NAME)

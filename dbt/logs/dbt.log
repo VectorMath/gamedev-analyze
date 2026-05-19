@@ -26880,3 +26880,1100 @@ GROUP BY
 [0m03:54:03.304262 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x752837657b10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7528376812d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x752837593f10>]}
 [0m03:54:03.305468 [debug] [MainThread]: Flushing usage events
 [0m03:54:04.224246 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:11:04.409942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba54c61250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba5418ad10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba54c63b50>]}
+
+
+============================== 07:11:04.417398 | 7a3e4679-dffe-416e-be88-acd11b668d15 ==============================
+[0m07:11:04.417398 [info ] [MainThread]: Running with dbt=1.11.9
+[0m07:11:04.418520 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'invocation_command': 'dbt run --profiles-dir /usr/app/dbt --select tag:core', 'quiet': 'False', 'version_check': 'True', 'fail_fast': 'False', 'log_cache_events': 'False', 'target_path': 'None', 'indirect_selection': 'eager', 'log_path': '/usr/app/dbt/logs', 'cache_selected_only': 'False', 'no_print': 'None', 'debug': 'False', 'log_format': 'default', 'use_colors': 'True', 'introspect': 'True', 'static_parser': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'profiles_dir': '/usr/app/dbt', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True'}
+[0m07:11:04.555888 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba51101010>]}
+[0m07:11:04.617780 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba54c7b3d0>]}
+[0m07:11:04.620001 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m07:11:04.702867 [debug] [MainThread]: checksum: f8bb6a62265c70f2530bed05e52c2cee1c1844b101d398a67d5798350ab914c5, vars: {}, profile: , target: , version: 1.11.9
+[0m07:11:04.991404 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:11:04.992921 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m07:11:04.999245 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:11:05.064248 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba51a8f9d0>]}
+[0m07:11:05.296152 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m07:11:05.302810 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m07:11:05.334763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba50100f50>]}
+[0m07:11:05.336228 [info ] [MainThread]: Found 19 models, 5 data tests, 10 sources, 468 macros
+[0m07:11:05.337400 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba509cb390>]}
+[0m07:11:05.341177 [info ] [MainThread]: 
+[0m07:11:05.342445 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m07:11:05.344363 [info ] [MainThread]: 
+[0m07:11:05.347049 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m07:11:05.354146 [debug] [ThreadPool]: Acquiring new postgres connection 'list_gamedev'
+[0m07:11:05.411645 [debug] [ThreadPool]: Using postgres connection "list_gamedev"
+[0m07:11:05.413018 [debug] [ThreadPool]: On list_gamedev: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "list_gamedev"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m07:11:05.413952 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:11:05.430182 [debug] [ThreadPool]: SQL status: SELECT 8 in 0.016 seconds
+[0m07:11:05.432193 [debug] [ThreadPool]: On list_gamedev: Close
+[0m07:11:05.435848 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_gamedev, now list_gamedev_public)
+[0m07:11:05.436589 [debug] [ThreadPool]: Acquiring new postgres connection 'list_gamedev_mart'
+[0m07:11:05.437389 [debug] [ThreadPool]: Acquiring new postgres connection 'list_gamedev_core'
+[0m07:11:05.446521 [debug] [ThreadPool]: Using postgres connection "list_gamedev_public"
+[0m07:11:05.449097 [debug] [ThreadPool]: Using postgres connection "list_gamedev_mart"
+[0m07:11:05.451297 [debug] [ThreadPool]: Using postgres connection "list_gamedev_core"
+[0m07:11:05.452246 [debug] [ThreadPool]: On list_gamedev_public: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "list_gamedev_public"} */
+select
+      'gamedev' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'gamedev' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'gamedev' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m07:11:05.453087 [debug] [ThreadPool]: On list_gamedev_mart: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "list_gamedev_mart"} */
+select
+      'gamedev' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'mart'
+    union all
+    select
+      'gamedev' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'mart'
+    union all
+    select
+      'gamedev' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'mart'
+  
+[0m07:11:05.454117 [debug] [ThreadPool]: On list_gamedev_core: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "list_gamedev_core"} */
+select
+      'gamedev' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'core'
+    union all
+    select
+      'gamedev' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'core'
+    union all
+    select
+      'gamedev' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'core'
+  
+[0m07:11:05.454980 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m07:11:05.455620 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:11:05.456517 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:11:05.476148 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.020 seconds
+[0m07:11:05.476829 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.022 seconds
+[0m07:11:05.479338 [debug] [ThreadPool]: On list_gamedev_mart: ROLLBACK
+[0m07:11:05.479916 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.023 seconds
+[0m07:11:05.481286 [debug] [ThreadPool]: On list_gamedev_public: ROLLBACK
+[0m07:11:05.482184 [debug] [ThreadPool]: On list_gamedev_mart: Close
+[0m07:11:05.483251 [debug] [ThreadPool]: On list_gamedev_core: ROLLBACK
+[0m07:11:05.484213 [debug] [ThreadPool]: On list_gamedev_public: Close
+[0m07:11:05.485860 [debug] [ThreadPool]: On list_gamedev_core: Close
+[0m07:11:05.497084 [debug] [MainThread]: Using postgres connection "master"
+[0m07:11:05.498160 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m07:11:05.498916 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m07:11:05.518968 [debug] [MainThread]: SQL status: SELECT 0 in 0.020 seconds
+[0m07:11:05.521069 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba4f12d2d0>]}
+[0m07:11:05.522388 [debug] [MainThread]: On master: ROLLBACK
+[0m07:11:05.523393 [debug] [MainThread]: On master: COMMIT
+[0m07:11:05.524179 [debug] [MainThread]: Using postgres connection "master"
+[0m07:11:05.524844 [debug] [MainThread]: On master: COMMIT
+[0m07:11:05.525815 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m07:11:05.527127 [debug] [MainThread]: On master: Close
+[0m07:11:05.534707 [debug] [Thread-1 (]: Began running node model.my_dbt_project.dim_country
+[0m07:11:05.535219 [debug] [Thread-2 (]: Began running node model.my_dbt_project.dim_currency
+[0m07:11:05.535622 [debug] [Thread-3 (]: Began running node model.my_dbt_project.dim_event_type
+[0m07:11:05.535981 [debug] [Thread-4 (]: Began running node model.my_dbt_project.dim_game_event
+[0m07:11:05.536673 [info ] [Thread-1 (]: 1 of 9 START sql table model core.dim_country .................................. [RUN]
+[0m07:11:05.537832 [info ] [Thread-2 (]: 2 of 9 START sql incremental model core.dim_currency ........................... [RUN]
+[0m07:11:05.539074 [info ] [Thread-3 (]: 3 of 9 START sql table model core.dim_event_type ............................... [RUN]
+[0m07:11:05.540267 [info ] [Thread-4 (]: 4 of 9 START sql table model core.dim_game_event ............................... [RUN]
+[0m07:11:05.541477 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_gamedev_core, now model.my_dbt_project.dim_country)
+[0m07:11:05.542885 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_gamedev_public, now model.my_dbt_project.dim_currency)
+[0m07:11:05.544621 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_gamedev_mart, now model.my_dbt_project.dim_event_type)
+[0m07:11:05.545922 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.my_dbt_project.dim_game_event'
+[0m07:11:05.546731 [debug] [Thread-1 (]: Began compiling node model.my_dbt_project.dim_country
+[0m07:11:05.547807 [debug] [Thread-2 (]: Began compiling node model.my_dbt_project.dim_currency
+[0m07:11:05.548659 [debug] [Thread-3 (]: Began compiling node model.my_dbt_project.dim_event_type
+[0m07:11:05.549516 [debug] [Thread-4 (]: Began compiling node model.my_dbt_project.dim_game_event
+[0m07:11:05.559681 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_dbt_project.dim_country"
+[0m07:11:05.569567 [debug] [Thread-2 (]: Writing injected SQL for node "model.my_dbt_project.dim_currency"
+[0m07:11:05.573442 [debug] [Thread-3 (]: Writing injected SQL for node "model.my_dbt_project.dim_event_type"
+[0m07:11:05.578358 [debug] [Thread-4 (]: Writing injected SQL for node "model.my_dbt_project.dim_game_event"
+[0m07:11:05.583925 [debug] [Thread-1 (]: Began executing node model.my_dbt_project.dim_country
+[0m07:11:05.584563 [debug] [Thread-3 (]: Began executing node model.my_dbt_project.dim_event_type
+[0m07:11:05.590754 [debug] [Thread-4 (]: Began executing node model.my_dbt_project.dim_game_event
+[0m07:11:05.597003 [debug] [Thread-2 (]: Began executing node model.my_dbt_project.dim_currency
+[0m07:11:05.642055 [debug] [Thread-3 (]: Writing runtime sql for node "model.my_dbt_project.dim_event_type"
+[0m07:11:05.642790 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_dbt_project.dim_country"
+[0m07:11:05.649737 [debug] [Thread-4 (]: Writing runtime sql for node "model.my_dbt_project.dim_game_event"
+[0m07:11:05.686805 [debug] [Thread-2 (]: Writing runtime sql for node "model.my_dbt_project.dim_currency"
+[0m07:11:05.689125 [debug] [Thread-3 (]: Using postgres connection "model.my_dbt_project.dim_event_type"
+[0m07:11:05.691703 [debug] [Thread-1 (]: Using postgres connection "model.my_dbt_project.dim_country"
+[0m07:11:05.692687 [debug] [Thread-3 (]: On model.my_dbt_project.dim_event_type: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_event_type"} */
+
+  
+    
+
+  create  table "gamedev"."core"."dim_event_type__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+SELECT
+    *
+FROM
+    "gamedev"."stage"."event_type"
+  );
+  
+[0m07:11:05.694337 [debug] [Thread-1 (]: On model.my_dbt_project.dim_country: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_country"} */
+
+  
+    
+
+  create  table "gamedev"."core"."dim_country__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+SELECT
+    *
+FROM
+    "gamedev"."stage"."country"
+  );
+  
+[0m07:11:05.695492 [debug] [Thread-4 (]: Using postgres connection "model.my_dbt_project.dim_game_event"
+[0m07:11:05.696397 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m07:11:05.696825 [debug] [Thread-2 (]: Using postgres connection "model.my_dbt_project.dim_currency"
+[0m07:11:05.697580 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:11:05.698536 [debug] [Thread-4 (]: On model.my_dbt_project.dim_game_event: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_game_event"} */
+
+  
+    
+
+  create  table "gamedev"."core"."dim_game_event__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+SELECT
+    *
+FROM
+    "gamedev"."stage"."game_event"
+  );
+  
+[0m07:11:05.700540 [debug] [Thread-2 (]: On model.my_dbt_project.dim_currency: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_currency"} */
+
+      
+  
+    
+
+  create  table "gamedev"."core"."dim_currency"
+  
+  
+    as
+  
+  (
+    
+SELECT
+    *
+FROM
+    "gamedev"."stage"."currency"
+
+
+  );
+  
+  
+[0m07:11:05.702297 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m07:11:05.705811 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m07:11:05.710229 [debug] [Thread-3 (]: SQL status: SELECT 5 in 0.014 seconds
+[0m07:11:05.716717 [debug] [Thread-1 (]: SQL status: SELECT 8 in 0.019 seconds
+[0m07:11:05.720067 [debug] [Thread-3 (]: Using postgres connection "model.my_dbt_project.dim_event_type"
+[0m07:11:05.720585 [debug] [Thread-4 (]: SQL status: SELECT 3 in 0.018 seconds
+[0m07:11:05.723181 [debug] [Thread-1 (]: Using postgres connection "model.my_dbt_project.dim_country"
+[0m07:11:05.724228 [debug] [Thread-3 (]: On model.my_dbt_project.dim_event_type: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_event_type"} */
+alter table "gamedev"."core"."dim_event_type__dbt_tmp" rename to "dim_event_type"
+[0m07:11:05.725018 [debug] [Thread-2 (]: SQL status: SELECT 12 in 0.019 seconds
+[0m07:11:05.728320 [debug] [Thread-4 (]: Using postgres connection "model.my_dbt_project.dim_game_event"
+[0m07:11:05.729498 [debug] [Thread-1 (]: On model.my_dbt_project.dim_country: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_country"} */
+alter table "gamedev"."core"."dim_country__dbt_tmp" rename to "dim_country"
+[0m07:11:05.736472 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.006 seconds
+[0m07:11:05.746721 [debug] [Thread-2 (]: On model.my_dbt_project.dim_currency: COMMIT
+[0m07:11:05.747580 [debug] [Thread-4 (]: On model.my_dbt_project.dim_game_event: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_game_event"} */
+alter table "gamedev"."core"."dim_game_event__dbt_tmp" rename to "dim_game_event"
+[0m07:11:05.750293 [debug] [Thread-3 (]: On model.my_dbt_project.dim_event_type: COMMIT
+[0m07:11:05.750724 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m07:11:05.751826 [debug] [Thread-2 (]: Using postgres connection "model.my_dbt_project.dim_currency"
+[0m07:11:05.753993 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m07:11:05.755446 [debug] [Thread-3 (]: Using postgres connection "model.my_dbt_project.dim_event_type"
+[0m07:11:05.757675 [debug] [Thread-1 (]: On model.my_dbt_project.dim_country: COMMIT
+[0m07:11:05.758994 [debug] [Thread-2 (]: On model.my_dbt_project.dim_currency: COMMIT
+[0m07:11:05.762351 [debug] [Thread-4 (]: On model.my_dbt_project.dim_game_event: COMMIT
+[0m07:11:05.764023 [debug] [Thread-3 (]: On model.my_dbt_project.dim_event_type: COMMIT
+[0m07:11:05.765580 [debug] [Thread-1 (]: Using postgres connection "model.my_dbt_project.dim_country"
+[0m07:11:05.767534 [debug] [Thread-4 (]: Using postgres connection "model.my_dbt_project.dim_game_event"
+[0m07:11:05.769104 [debug] [Thread-2 (]: SQL status: COMMIT in 0.002 seconds
+[0m07:11:05.769945 [debug] [Thread-1 (]: On model.my_dbt_project.dim_country: COMMIT
+[0m07:11:05.770358 [debug] [Thread-3 (]: SQL status: COMMIT in 0.002 seconds
+[0m07:11:05.771085 [debug] [Thread-4 (]: On model.my_dbt_project.dim_game_event: COMMIT
+[0m07:11:05.774707 [debug] [Thread-2 (]: On model.my_dbt_project.dim_currency: Close
+[0m07:11:05.782901 [debug] [Thread-3 (]: Applying DROP to: "gamedev"."core"."dim_event_type__dbt_backup"
+[0m07:11:05.783583 [debug] [Thread-1 (]: SQL status: COMMIT in 0.008 seconds
+[0m07:11:05.788365 [debug] [Thread-4 (]: SQL status: COMMIT in 0.003 seconds
+[0m07:11:05.789188 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba4f105290>]}
+[0m07:11:05.797217 [debug] [Thread-3 (]: Using postgres connection "model.my_dbt_project.dim_event_type"
+[0m07:11:05.800874 [debug] [Thread-1 (]: Applying DROP to: "gamedev"."core"."dim_country__dbt_backup"
+[0m07:11:05.803588 [debug] [Thread-4 (]: Applying DROP to: "gamedev"."core"."dim_game_event__dbt_backup"
+[0m07:11:05.806149 [info ] [Thread-2 (]: 2 of 9 OK created sql incremental model core.dim_currency ...................... [[32mSELECT 12[0m in 0.24s]
+[0m07:11:05.809059 [debug] [Thread-3 (]: On model.my_dbt_project.dim_event_type: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_event_type"} */
+drop table if exists "gamedev"."core"."dim_event_type__dbt_backup" cascade
+[0m07:11:05.812664 [debug] [Thread-1 (]: Using postgres connection "model.my_dbt_project.dim_country"
+[0m07:11:05.815857 [debug] [Thread-4 (]: Using postgres connection "model.my_dbt_project.dim_game_event"
+[0m07:11:05.818960 [debug] [Thread-2 (]: Finished running node model.my_dbt_project.dim_currency
+[0m07:11:05.821049 [debug] [Thread-3 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m07:11:05.822414 [debug] [Thread-1 (]: On model.my_dbt_project.dim_country: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_country"} */
+drop table if exists "gamedev"."core"."dim_country__dbt_backup" cascade
+[0m07:11:05.823976 [debug] [Thread-4 (]: On model.my_dbt_project.dim_game_event: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_game_event"} */
+drop table if exists "gamedev"."core"."dim_game_event__dbt_backup" cascade
+[0m07:11:05.825706 [debug] [Thread-2 (]: Began running node model.my_dbt_project.dim_platform
+[0m07:11:05.828675 [debug] [Thread-3 (]: On model.my_dbt_project.dim_event_type: Close
+[0m07:11:05.830900 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m07:11:05.832070 [debug] [Thread-4 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m07:11:05.833486 [info ] [Thread-2 (]: 5 of 9 START sql table model core.dim_platform ................................. [RUN]
+[0m07:11:05.835130 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba4f5cf0d0>]}
+[0m07:11:05.838892 [debug] [Thread-1 (]: On model.my_dbt_project.dim_country: Close
+[0m07:11:05.840763 [debug] [Thread-4 (]: On model.my_dbt_project.dim_game_event: Close
+[0m07:11:05.841570 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.my_dbt_project.dim_currency, now model.my_dbt_project.dim_platform)
+[0m07:11:05.842572 [info ] [Thread-3 (]: 3 of 9 OK created sql table model core.dim_event_type .......................... [[32mSELECT 5[0m in 0.29s]
+[0m07:11:05.844295 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba4c509cd0>]}
+[0m07:11:05.845448 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba4c59fdd0>]}
+[0m07:11:05.846199 [debug] [Thread-2 (]: Began compiling node model.my_dbt_project.dim_platform
+[0m07:11:05.847155 [debug] [Thread-3 (]: Finished running node model.my_dbt_project.dim_event_type
+[0m07:11:05.848110 [info ] [Thread-1 (]: 1 of 9 OK created sql table model core.dim_country ............................. [[32mSELECT 8[0m in 0.30s]
+[0m07:11:05.849150 [info ] [Thread-4 (]: 4 of 9 OK created sql table model core.dim_game_event .......................... [[32mSELECT 3[0m in 0.30s]
+[0m07:11:05.852563 [debug] [Thread-2 (]: Writing injected SQL for node "model.my_dbt_project.dim_platform"
+[0m07:11:05.854564 [debug] [Thread-3 (]: Began running node model.my_dbt_project.dim_region
+[0m07:11:05.855569 [debug] [Thread-1 (]: Finished running node model.my_dbt_project.dim_country
+[0m07:11:05.857374 [debug] [Thread-4 (]: Finished running node model.my_dbt_project.dim_game_event
+[0m07:11:05.858708 [info ] [Thread-3 (]: 6 of 9 START sql table model core.dim_region ................................... [RUN]
+[0m07:11:05.859762 [debug] [Thread-1 (]: Began running node model.my_dbt_project.dim_user
+[0m07:11:05.861234 [debug] [Thread-4 (]: Began running node model.my_dbt_project.fact_event
+[0m07:11:05.862270 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.my_dbt_project.dim_event_type, now model.my_dbt_project.dim_region)
+[0m07:11:05.863128 [info ] [Thread-1 (]: 7 of 9 START sql incremental model core.dim_user ............................... [RUN]
+[0m07:11:05.864746 [debug] [Thread-2 (]: Began executing node model.my_dbt_project.dim_platform
+[0m07:11:05.864222 [info ] [Thread-4 (]: 8 of 9 START sql incremental model core.fact_event ............................. [RUN]
+[0m07:11:05.865584 [debug] [Thread-3 (]: Began compiling node model.my_dbt_project.dim_region
+[0m07:11:05.866334 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.my_dbt_project.dim_country, now model.my_dbt_project.dim_user)
+[0m07:11:05.869245 [debug] [Thread-2 (]: Writing runtime sql for node "model.my_dbt_project.dim_platform"
+[0m07:11:05.869985 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.my_dbt_project.dim_game_event, now model.my_dbt_project.fact_event)
+[0m07:11:05.872838 [debug] [Thread-3 (]: Writing injected SQL for node "model.my_dbt_project.dim_region"
+[0m07:11:05.873567 [debug] [Thread-1 (]: Began compiling node model.my_dbt_project.dim_user
+[0m07:11:05.874758 [debug] [Thread-4 (]: Began compiling node model.my_dbt_project.fact_event
+[0m07:11:05.880208 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_dbt_project.dim_user"
+[0m07:11:05.884430 [debug] [Thread-4 (]: Writing injected SQL for node "model.my_dbt_project.fact_event"
+[0m07:11:05.885085 [debug] [Thread-2 (]: Using postgres connection "model.my_dbt_project.dim_platform"
+[0m07:11:05.886351 [debug] [Thread-3 (]: Began executing node model.my_dbt_project.dim_region
+[0m07:11:05.887532 [debug] [Thread-2 (]: On model.my_dbt_project.dim_platform: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_platform"} */
+
+  
+    
+
+  create  table "gamedev"."core"."dim_platform__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+SELECT
+    *
+FROM
+    "gamedev"."stage"."platform"
+  );
+  
+[0m07:11:05.887998 [debug] [Thread-1 (]: Began executing node model.my_dbt_project.dim_user
+[0m07:11:05.891507 [debug] [Thread-3 (]: Writing runtime sql for node "model.my_dbt_project.dim_region"
+[0m07:11:05.892058 [debug] [Thread-4 (]: Began executing node model.my_dbt_project.fact_event
+[0m07:11:05.893196 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m07:11:05.898436 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_dbt_project.dim_user"
+[0m07:11:05.904525 [debug] [Thread-4 (]: Writing runtime sql for node "model.my_dbt_project.fact_event"
+[0m07:11:05.909332 [debug] [Thread-3 (]: Using postgres connection "model.my_dbt_project.dim_region"
+[0m07:11:05.910101 [debug] [Thread-1 (]: Using postgres connection "model.my_dbt_project.dim_user"
+[0m07:11:05.911366 [debug] [Thread-3 (]: On model.my_dbt_project.dim_region: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_region"} */
+
+  
+    
+
+  create  table "gamedev"."core"."dim_region__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+SELECT
+    *
+FROM
+    "gamedev"."stage"."region"
+  );
+  
+[0m07:11:05.912251 [debug] [Thread-4 (]: Using postgres connection "model.my_dbt_project.fact_event"
+[0m07:11:05.912983 [debug] [Thread-1 (]: On model.my_dbt_project.dim_user: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_user"} */
+
+      
+  
+    
+
+  create  table "gamedev"."core"."dim_user"
+  
+  
+    as
+  
+  (
+    
+
+SELECT
+	id,
+	first_name,
+	last_name,
+	CASE
+		WHEN gender IN ('Agender', 'Genderfluid', 'Non-binary', 'Bigender', 'Polygender', 'Genderqueer')
+			THEN 'Other'
+		ELSE
+			gender
+	END AS gender,
+	registration_date,
+	birthdate AS birth_date,
+	email,
+	country_id,
+	created_at,
+	updated_at
+FROM
+	"gamedev"."stage"."users"
+
+
+  );
+  
+  
+[0m07:11:05.914238 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m07:11:05.915106 [debug] [Thread-4 (]: On model.my_dbt_project.fact_event: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.fact_event"} */
+
+      
+  
+    
+
+  create  table "gamedev"."core"."fact_event"
+  
+  
+    as
+  
+  (
+    
+SELECT
+    *
+FROM
+    "gamedev"."stage"."events"
+
+  );
+  
+  
+[0m07:11:05.916020 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:11:05.917241 [debug] [Thread-2 (]: SQL status: SELECT 3 in 0.024 seconds
+[0m07:11:05.918566 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m07:11:05.923007 [debug] [Thread-2 (]: Using postgres connection "model.my_dbt_project.dim_platform"
+[0m07:11:05.926407 [debug] [Thread-3 (]: SQL status: SELECT 2 in 0.012 seconds
+[0m07:11:05.927806 [debug] [Thread-2 (]: On model.my_dbt_project.dim_platform: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_platform"} */
+alter table "gamedev"."core"."dim_platform__dbt_tmp" rename to "dim_platform"
+[0m07:11:05.931171 [debug] [Thread-3 (]: Using postgres connection "model.my_dbt_project.dim_region"
+[0m07:11:05.933532 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m07:11:05.933954 [debug] [Thread-3 (]: On model.my_dbt_project.dim_region: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_region"} */
+alter table "gamedev"."core"."dim_region__dbt_tmp" rename to "dim_region"
+[0m07:11:05.936075 [debug] [Thread-1 (]: SQL status: SELECT 1000 in 0.020 seconds
+[0m07:11:05.937983 [debug] [Thread-2 (]: On model.my_dbt_project.dim_platform: COMMIT
+[0m07:11:05.939765 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m07:11:05.941542 [debug] [Thread-1 (]: On model.my_dbt_project.dim_user: COMMIT
+[0m07:11:05.943121 [debug] [Thread-2 (]: Using postgres connection "model.my_dbt_project.dim_platform"
+[0m07:11:05.943809 [debug] [Thread-4 (]: SQL status: SELECT 11000 in 0.025 seconds
+[0m07:11:05.945831 [debug] [Thread-3 (]: On model.my_dbt_project.dim_region: COMMIT
+[0m07:11:05.947539 [debug] [Thread-1 (]: Using postgres connection "model.my_dbt_project.dim_user"
+[0m07:11:05.949221 [debug] [Thread-2 (]: On model.my_dbt_project.dim_platform: COMMIT
+[0m07:11:05.951115 [debug] [Thread-4 (]: On model.my_dbt_project.fact_event: COMMIT
+[0m07:11:05.952498 [debug] [Thread-3 (]: Using postgres connection "model.my_dbt_project.dim_region"
+[0m07:11:05.953903 [debug] [Thread-1 (]: On model.my_dbt_project.dim_user: COMMIT
+[0m07:11:05.957980 [debug] [Thread-4 (]: Using postgres connection "model.my_dbt_project.fact_event"
+[0m07:11:05.959777 [debug] [Thread-3 (]: On model.my_dbt_project.dim_region: COMMIT
+[0m07:11:05.960560 [debug] [Thread-2 (]: SQL status: COMMIT in 0.005 seconds
+[0m07:11:05.963133 [debug] [Thread-4 (]: On model.my_dbt_project.fact_event: COMMIT
+[0m07:11:05.963607 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m07:11:05.967777 [debug] [Thread-2 (]: Applying DROP to: "gamedev"."core"."dim_platform__dbt_backup"
+[0m07:11:05.968193 [debug] [Thread-3 (]: SQL status: COMMIT in 0.003 seconds
+[0m07:11:05.971237 [debug] [Thread-1 (]: On model.my_dbt_project.dim_user: Close
+[0m07:11:05.971698 [debug] [Thread-4 (]: SQL status: COMMIT in 0.002 seconds
+[0m07:11:05.972812 [debug] [Thread-2 (]: Using postgres connection "model.my_dbt_project.dim_platform"
+[0m07:11:05.975906 [debug] [Thread-3 (]: Applying DROP to: "gamedev"."core"."dim_region__dbt_backup"
+[0m07:11:05.978611 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba4c5975d0>]}
+[0m07:11:05.981294 [debug] [Thread-4 (]: On model.my_dbt_project.fact_event: Close
+[0m07:11:05.982311 [debug] [Thread-2 (]: On model.my_dbt_project.dim_platform: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_platform"} */
+drop table if exists "gamedev"."core"."dim_platform__dbt_backup" cascade
+[0m07:11:05.983588 [debug] [Thread-3 (]: Using postgres connection "model.my_dbt_project.dim_region"
+[0m07:11:05.984849 [info ] [Thread-1 (]: 7 of 9 OK created sql incremental model core.dim_user .......................... [[32mSELECT 1000[0m in 0.11s]
+[0m07:11:05.986093 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba4c577850>]}
+[0m07:11:05.987459 [debug] [Thread-2 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m07:11:05.988229 [debug] [Thread-3 (]: On model.my_dbt_project.dim_region: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.dim_region"} */
+drop table if exists "gamedev"."core"."dim_region__dbt_backup" cascade
+[0m07:11:05.989366 [debug] [Thread-1 (]: Finished running node model.my_dbt_project.dim_user
+[0m07:11:05.990569 [info ] [Thread-4 (]: 8 of 9 OK created sql incremental model core.fact_event ........................ [[32mSELECT 11000[0m in 0.12s]
+[0m07:11:05.992372 [debug] [Thread-2 (]: On model.my_dbt_project.dim_platform: Close
+[0m07:11:05.994029 [debug] [Thread-3 (]: SQL status: DROP TABLE in 0.000 seconds
+[0m07:11:05.994685 [debug] [Thread-1 (]: Began running node model.my_dbt_project.fact_transaction
+[0m07:11:05.995720 [debug] [Thread-4 (]: Finished running node model.my_dbt_project.fact_event
+[0m07:11:05.996727 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba4f115450>]}
+[0m07:11:05.998350 [debug] [Thread-3 (]: On model.my_dbt_project.dim_region: Close
+[0m07:11:05.999261 [info ] [Thread-1 (]: 9 of 9 START sql incremental model core.fact_transaction ....................... [RUN]
+[0m07:11:06.001377 [info ] [Thread-2 (]: 5 of 9 OK created sql table model core.dim_platform ............................ [[32mSELECT 3[0m in 0.16s]
+[0m07:11:06.002865 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba4c41f810>]}
+[0m07:11:06.005106 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.my_dbt_project.dim_user, now model.my_dbt_project.fact_transaction)
+[0m07:11:06.006119 [debug] [Thread-2 (]: Finished running node model.my_dbt_project.dim_platform
+[0m07:11:06.007109 [info ] [Thread-3 (]: 6 of 9 OK created sql table model core.dim_region .............................. [[32mSELECT 2[0m in 0.14s]
+[0m07:11:06.007923 [debug] [Thread-1 (]: Began compiling node model.my_dbt_project.fact_transaction
+[0m07:11:06.009290 [debug] [Thread-3 (]: Finished running node model.my_dbt_project.dim_region
+[0m07:11:06.013114 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_dbt_project.fact_transaction"
+[0m07:11:06.018083 [debug] [Thread-1 (]: Began executing node model.my_dbt_project.fact_transaction
+[0m07:11:06.022030 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_dbt_project.fact_transaction"
+[0m07:11:06.026528 [debug] [Thread-1 (]: Using postgres connection "model.my_dbt_project.fact_transaction"
+[0m07:11:06.027566 [debug] [Thread-1 (]: On model.my_dbt_project.fact_transaction: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.fact_transaction"} */
+
+      
+  
+    
+
+  create  table "gamedev"."core"."fact_transaction"
+  
+  
+    as
+  
+  (
+    
+SELECT
+    *
+FROM
+    "gamedev"."stage"."transactions"
+
+  );
+  
+  
+[0m07:11:06.028225 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:11:06.040841 [debug] [Thread-1 (]: SQL status: SELECT 7000 in 0.013 seconds
+[0m07:11:06.043351 [debug] [Thread-1 (]: On model.my_dbt_project.fact_transaction: COMMIT
+[0m07:11:06.045157 [debug] [Thread-1 (]: Using postgres connection "model.my_dbt_project.fact_transaction"
+[0m07:11:06.046399 [debug] [Thread-1 (]: On model.my_dbt_project.fact_transaction: COMMIT
+[0m07:11:06.051128 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m07:11:06.053463 [debug] [Thread-1 (]: On model.my_dbt_project.fact_transaction: Close
+[0m07:11:06.054982 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7a3e4679-dffe-416e-be88-acd11b668d15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba4c59bb10>]}
+[0m07:11:06.056781 [info ] [Thread-1 (]: 9 of 9 OK created sql incremental model core.fact_transaction .................. [[32mSELECT 7000[0m in 0.05s]
+[0m07:11:06.058677 [debug] [Thread-1 (]: Finished running node model.my_dbt_project.fact_transaction
+[0m07:11:06.062912 [debug] [MainThread]: On master: COMMIT
+[0m07:11:06.064387 [debug] [MainThread]: Using postgres connection "master"
+[0m07:11:06.065467 [debug] [MainThread]: On master: COMMIT
+[0m07:11:06.066796 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m07:11:06.075476 [debug] [MainThread]: SQL status: COMMIT in 0.009 seconds
+[0m07:11:06.077308 [debug] [MainThread]: On master: Close
+[0m07:11:06.079099 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:11:06.080597 [debug] [MainThread]: Connection 'model.my_dbt_project.dim_platform' was properly closed.
+[0m07:11:06.081882 [debug] [MainThread]: Connection 'model.my_dbt_project.dim_region' was properly closed.
+[0m07:11:06.083342 [debug] [MainThread]: Connection 'model.my_dbt_project.fact_transaction' was properly closed.
+[0m07:11:06.084739 [debug] [MainThread]: Connection 'model.my_dbt_project.fact_event' was properly closed.
+[0m07:11:06.086691 [info ] [MainThread]: 
+[0m07:11:06.087954 [info ] [MainThread]: Finished running 4 incremental models, 5 table models in 0 hours 0 minutes and 0.74 seconds (0.74s).
+[0m07:11:06.091260 [debug] [MainThread]: Command end result
+[0m07:11:06.138513 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m07:11:06.144661 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m07:11:06.155177 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/app/dbt/target/run_results.json
+[0m07:11:06.155975 [info ] [MainThread]: 
+[0m07:11:06.156995 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m07:11:06.158059 [info ] [MainThread]: 
+[0m07:11:06.159041 [info ] [MainThread]: Done. PASS=9 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=9
+[0m07:11:06.163118 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.8264387, "process_in_blocks": "0", "process_kernel_time": 0.505102, "process_mem_max_rss": "133768", "process_out_blocks": "3336", "process_user_time": 2.393223}
+[0m07:11:06.164815 [debug] [MainThread]: Command `dbt run` succeeded at 07:11:06.164660 after 1.83 seconds
+[0m07:11:06.165859 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba51f1e250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba51b6b690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x71ba51e3d950>]}
+[0m07:11:06.166762 [debug] [MainThread]: Flushing usage events
+[0m07:11:08.123635 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m07:11:15.112389 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a48ca990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a48cabd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a48c9010>]}
+
+
+============================== 07:11:15.117802 | c52259e6-c485-41ad-99a0-618595fa93b4 ==============================
+[0m07:11:15.117802 [info ] [MainThread]: Running with dbt=1.11.9
+[0m07:11:15.119823 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'partial_parse': 'True', 'empty': 'False', 'use_experimental_parser': 'False', 'static_parser': 'True', 'use_colors': 'True', 'target_path': 'None', 'debug': 'False', 'log_cache_events': 'False', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run --profiles-dir /usr/app/dbt --select tag:mart', 'version_check': 'True', 'log_path': '/usr/app/dbt/logs', 'no_print': 'None', 'profiles_dir': '/usr/app/dbt', 'fail_fast': 'False', 'printer_width': '80', 'indirect_selection': 'eager', 'log_format': 'default', 'introspect': 'True', 'quiet': 'False', 'warn_error': 'None'}
+[0m07:11:15.297663 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c52259e6-c485-41ad-99a0-618595fa93b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a37b2690>]}
+[0m07:11:15.362911 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c52259e6-c485-41ad-99a0-618595fa93b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a78eba10>]}
+[0m07:11:15.364408 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m07:11:15.440175 [debug] [MainThread]: checksum: f8bb6a62265c70f2530bed05e52c2cee1c1844b101d398a67d5798350ab914c5, vars: {}, profile: , target: , version: 1.11.9
+[0m07:11:15.708147 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:11:15.709771 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m07:11:15.710617 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:11:15.759313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c52259e6-c485-41ad-99a0-618595fa93b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a37fe210>]}
+[0m07:11:16.000702 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m07:11:16.007372 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m07:11:16.026937 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c52259e6-c485-41ad-99a0-618595fa93b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a2b146d0>]}
+[0m07:11:16.028305 [info ] [MainThread]: Found 19 models, 5 data tests, 10 sources, 468 macros
+[0m07:11:16.029429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c52259e6-c485-41ad-99a0-618595fa93b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a2f64690>]}
+[0m07:11:16.032989 [info ] [MainThread]: 
+[0m07:11:16.034188 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m07:11:16.035241 [info ] [MainThread]: 
+[0m07:11:16.037041 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m07:11:16.041693 [debug] [ThreadPool]: Acquiring new postgres connection 'list_gamedev'
+[0m07:11:16.082537 [debug] [ThreadPool]: Using postgres connection "list_gamedev"
+[0m07:11:16.084560 [debug] [ThreadPool]: On list_gamedev: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "list_gamedev"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m07:11:16.086035 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:11:16.104651 [debug] [ThreadPool]: SQL status: SELECT 8 in 0.018 seconds
+[0m07:11:16.107913 [debug] [ThreadPool]: On list_gamedev: Close
+[0m07:11:16.114919 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_gamedev, now list_gamedev_mart)
+[0m07:11:16.116713 [debug] [ThreadPool]: Acquiring new postgres connection 'list_gamedev_public'
+[0m07:11:16.117778 [debug] [ThreadPool]: Acquiring new postgres connection 'list_gamedev_core'
+[0m07:11:16.124848 [debug] [ThreadPool]: Using postgres connection "list_gamedev_mart"
+[0m07:11:16.127791 [debug] [ThreadPool]: Using postgres connection "list_gamedev_public"
+[0m07:11:16.131130 [debug] [ThreadPool]: Using postgres connection "list_gamedev_core"
+[0m07:11:16.133196 [debug] [ThreadPool]: On list_gamedev_mart: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "list_gamedev_mart"} */
+select
+      'gamedev' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'mart'
+    union all
+    select
+      'gamedev' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'mart'
+    union all
+    select
+      'gamedev' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'mart'
+  
+[0m07:11:16.135190 [debug] [ThreadPool]: On list_gamedev_public: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "list_gamedev_public"} */
+select
+      'gamedev' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'gamedev' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'gamedev' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m07:11:16.137043 [debug] [ThreadPool]: On list_gamedev_core: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "list_gamedev_core"} */
+select
+      'gamedev' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'core'
+    union all
+    select
+      'gamedev' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'core'
+    union all
+    select
+      'gamedev' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'core'
+  
+[0m07:11:16.138716 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m07:11:16.140286 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:11:16.142211 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:11:16.163745 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.025 seconds
+[0m07:11:16.166655 [debug] [ThreadPool]: On list_gamedev_mart: ROLLBACK
+[0m07:11:16.167306 [debug] [ThreadPool]: SQL status: SELECT 9 in 0.025 seconds
+[0m07:11:16.167746 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.028 seconds
+[0m07:11:16.169454 [debug] [ThreadPool]: On list_gamedev_mart: Close
+[0m07:11:16.171322 [debug] [ThreadPool]: On list_gamedev_core: ROLLBACK
+[0m07:11:16.173985 [debug] [ThreadPool]: On list_gamedev_public: ROLLBACK
+[0m07:11:16.177720 [debug] [ThreadPool]: On list_gamedev_core: Close
+[0m07:11:16.179719 [debug] [ThreadPool]: On list_gamedev_public: Close
+[0m07:11:16.189873 [debug] [MainThread]: Using postgres connection "master"
+[0m07:11:16.192132 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m07:11:16.193907 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m07:11:16.210505 [debug] [MainThread]: SQL status: SELECT 0 in 0.017 seconds
+[0m07:11:16.213205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c52259e6-c485-41ad-99a0-618595fa93b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a131c150>]}
+[0m07:11:16.215107 [debug] [MainThread]: On master: ROLLBACK
+[0m07:11:16.217463 [debug] [MainThread]: On master: COMMIT
+[0m07:11:16.219240 [debug] [MainThread]: Using postgres connection "master"
+[0m07:11:16.220969 [debug] [MainThread]: On master: COMMIT
+[0m07:11:16.223206 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m07:11:16.225018 [debug] [MainThread]: On master: Close
+[0m07:11:16.230931 [debug] [Thread-1 (]: Began running node model.my_dbt_project.event
+[0m07:11:16.231584 [debug] [Thread-2 (]: Began running node model.my_dbt_project.retention
+[0m07:11:16.232192 [debug] [Thread-3 (]: Began running node model.my_dbt_project.transaction
+[0m07:11:16.232830 [debug] [Thread-4 (]: Began running node model.my_dbt_project.user
+[0m07:11:16.233749 [info ] [Thread-1 (]: 1 of 4 START sql incremental model mart.event .................................. [RUN]
+[0m07:11:16.235298 [info ] [Thread-2 (]: 2 of 4 START sql incremental model mart.retention .............................. [RUN]
+[0m07:11:16.236677 [info ] [Thread-3 (]: 3 of 4 START sql incremental model mart.transaction ............................ [RUN]
+[0m07:11:16.238601 [info ] [Thread-4 (]: 4 of 4 START sql incremental model mart.user ................................... [RUN]
+[0m07:11:16.240586 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_gamedev_public, now model.my_dbt_project.event)
+[0m07:11:16.242238 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_gamedev_core, now model.my_dbt_project.retention)
+[0m07:11:16.243374 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_gamedev_mart, now model.my_dbt_project.transaction)
+[0m07:11:16.244688 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.my_dbt_project.user'
+[0m07:11:16.245813 [debug] [Thread-1 (]: Began compiling node model.my_dbt_project.event
+[0m07:11:16.246990 [debug] [Thread-2 (]: Began compiling node model.my_dbt_project.retention
+[0m07:11:16.248015 [debug] [Thread-3 (]: Began compiling node model.my_dbt_project.transaction
+[0m07:11:16.249583 [debug] [Thread-4 (]: Began compiling node model.my_dbt_project.user
+[0m07:11:16.260335 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_dbt_project.event"
+[0m07:11:16.265140 [debug] [Thread-2 (]: Writing injected SQL for node "model.my_dbt_project.retention"
+[0m07:11:16.271878 [debug] [Thread-3 (]: Writing injected SQL for node "model.my_dbt_project.transaction"
+[0m07:11:16.276659 [debug] [Thread-4 (]: Writing injected SQL for node "model.my_dbt_project.user"
+[0m07:11:16.288007 [debug] [Thread-2 (]: Began executing node model.my_dbt_project.retention
+[0m07:11:16.288568 [debug] [Thread-1 (]: Began executing node model.my_dbt_project.event
+[0m07:11:16.295011 [debug] [Thread-3 (]: Began executing node model.my_dbt_project.transaction
+[0m07:11:16.306325 [debug] [Thread-4 (]: Began executing node model.my_dbt_project.user
+[0m07:11:16.338791 [debug] [Thread-2 (]: Writing runtime sql for node "model.my_dbt_project.retention"
+[0m07:11:16.341576 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_dbt_project.event"
+[0m07:11:16.345753 [debug] [Thread-3 (]: Writing runtime sql for node "model.my_dbt_project.transaction"
+[0m07:11:16.350586 [debug] [Thread-4 (]: Writing runtime sql for node "model.my_dbt_project.user"
+[0m07:11:16.361780 [debug] [Thread-2 (]: Using postgres connection "model.my_dbt_project.retention"
+[0m07:11:16.362998 [debug] [Thread-3 (]: Using postgres connection "model.my_dbt_project.transaction"
+[0m07:11:16.363425 [debug] [Thread-2 (]: On model.my_dbt_project.retention: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.retention"} */
+
+      
+  
+    
+
+  create  table "gamedev"."mart"."retention"
+  
+  
+    as
+  
+  (
+    
+
+WITH user_registrations AS (
+    SELECT
+        id AS user_id,
+        registration_date::date AS registration_date
+    FROM "gamedev"."core"."dim_user"
+    
+),
+
+user_activity AS (
+    SELECT DISTINCT
+        user_id,
+        date::date AS activity_date
+    FROM "gamedev"."core"."fact_event"
+    WHERE 1=1
+        
+            AND date BETWEEN
+                (SELECT MIN(registration_date) FROM "gamedev"."core"."dim_user")
+                AND
+                (SELECT MAX(registration_date) + INTERVAL '30 days' FROM "gamedev"."core"."dim_user")
+        
+)
+
+SELECT
+    r.user_id,
+    r.registration_date,
+    BOOL_OR(
+        CASE
+            WHEN a.activity_date = r.registration_date + INTERVAL '1 day'
+                THEN TRUE
+                ELSE FALSE
+        END
+    ) AS retention_d1,
+    BOOL_OR(
+        CASE
+            WHEN a.activity_date = r.registration_date + INTERVAL '7 days'
+                THEN TRUE
+                ELSE FALSE
+        END
+    ) AS retention_d7,
+    BOOL_OR(
+        CASE
+            WHEN a.activity_date = r.registration_date + INTERVAL '14 days'
+                THEN TRUE
+                ELSE FALSE
+        END
+    ) AS retention_d14,
+    BOOL_OR(
+        CASE
+            WHEN a.activity_date = r.registration_date + INTERVAL '30 days'
+                THEN TRUE
+                ELSE FALSE
+        END
+    ) AS retention_d30,
+    CURRENT_TIMESTAMP AS created_at,
+    CURRENT_TIMESTAMP AS updated_at
+FROM
+    user_registrations AS r
+LEFT JOIN
+    user_activity AS a
+        ON r.user_id = a.user_id
+        AND a.activity_date BETWEEN
+            r.registration_date
+            AND
+            r.registration_date + INTERVAL '30 days'
+GROUP BY
+    r.user_id,
+    r.registration_date
+  );
+  
+  
+[0m07:11:16.364159 [debug] [Thread-1 (]: Using postgres connection "model.my_dbt_project.event"
+[0m07:11:16.366225 [debug] [Thread-3 (]: On model.my_dbt_project.transaction: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.transaction"} */
+
+      
+  
+    
+
+  create  table "gamedev"."mart"."transaction"
+  
+  
+    as
+  
+  (
+    
+SELECT
+	tr.id,
+	tr.user_id,
+	tr."date",
+	cr.code AS currency_code,
+	cr."name" AS currency_name,
+	tr.price_value AS price,
+	tr.price_value * cr.rate_to_usd AS price_usd,
+	pf."name" AS platform,
+	ge."name" AS game_event_title,
+	ge."name" IS NOT NULL AS is_game_event_time,
+	tr.created_at,
+	tr.updated_at
+FROM
+	"gamedev"."core"."fact_transaction" AS tr
+JOIN
+	"gamedev"."core"."dim_currency" AS cr
+		ON tr.currency_id = cr.code_id
+		AND tr."date" >= cr.start_date
+		AND tr."date" < cr.end_date
+JOIN
+	"gamedev"."core"."dim_platform" AS pf
+		ON tr.platform_id = pf.id
+JOIN
+	"gamedev"."core"."dim_user" AS us
+		ON tr.user_id = us.id
+LEFT JOIN
+	"gamedev"."core"."dim_game_event" AS ge
+		ON tr."date" >= ge.start_date
+		AND tr."date" < ge.end_date
+
+
+  );
+  
+  
+[0m07:11:16.367154 [debug] [Thread-4 (]: Using postgres connection "model.my_dbt_project.user"
+[0m07:11:16.368457 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m07:11:16.370087 [debug] [Thread-1 (]: On model.my_dbt_project.event: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.event"} */
+
+      
+  
+    
+
+  create  table "gamedev"."mart"."event"
+  
+  
+    as
+  
+  (
+    
+SELECT
+	ev.id,
+	ev.user_id,
+	ev."date",
+	et."type",
+	p."name" AS platform,
+	ge."name" AS game_event_title,
+	ge."name" IS NOT NULL AS is_game_event_time,
+	ev.created_at,
+	ev.updated_at
+FROM
+	"gamedev"."core"."fact_event" AS ev
+JOIN
+	"gamedev"."core"."dim_event_type" AS et
+		ON ev.event_type = et.id
+JOIN
+	"gamedev"."core"."dim_platform" AS p
+		ON ev.platform_id = p.id
+LEFT JOIN
+	"gamedev"."core"."dim_game_event" AS ge
+		ON ev."date" >= ge.start_date
+		AND ev."date" < ge.end_date
+
+
+  );
+  
+  
+[0m07:11:16.371665 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m07:11:16.373391 [debug] [Thread-4 (]: On model.my_dbt_project.user: /* {"app": "dbt", "dbt_version": "1.11.9", "profile_name": "my_dbt_project", "target_name": "dev", "node_id": "model.my_dbt_project.user"} */
+
+      
+  
+    
+
+  create  table "gamedev"."mart"."user"
+  
+  
+    as
+  
+  (
+    
+WITH user_feature AS (
+	SELECT
+		*,
+		DATE_PART(
+		'year',
+		AGE(CURRENT_DATE, birth_date)
+	) AS years_old,
+	(
+		DATE_PART('year', AGE(CURRENT_DATE, registration_date)) * 12
+		+
+		DATE_PART('month', AGE(CURRENT_DATE, registration_date))
+	)::INT AS months_in_game
+	FROM
+		"gamedev"."core"."dim_user"
+)
+SELECT
+	us.id,
+	CONCAT(us.first_name, ' ', us.last_name) AS user_name,
+	re."name" AS region,
+	cntr."name" AS country,
+	us.gender,
+	us.birth_date,
+	us.years_old,
+	CASE
+		WHEN us.years_old < 14
+			THEN 'Kid'
+		WHEN us.years_old BETWEEN 14 AND 20
+			THEN 'Teenager'
+		WHEN us.years_old BETWEEN 21 AND 29
+			THEN 'Young'
+		WHEN us.years_old BETWEEN 30 AND 50
+			THEN 'Adult'
+		ELSE
+			'Pensioner'
+	END AS age_group,
+	us.registration_date,
+	us.months_in_game,
+	us.created_at,
+	us.updated_at
+FROM
+	user_feature AS us
+LEFT JOIN
+	"gamedev"."core"."dim_country" AS cntr
+		ON us.country_id = cntr.id
+LEFT JOIN
+	"gamedev"."core"."dim_region" AS re
+		ON cntr.region_id = re.id
+
+
+  );
+  
+  
+[0m07:11:16.376476 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:11:16.378625 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m07:11:16.396865 [debug] [Thread-2 (]: SQL status: SELECT 1000 in 0.028 seconds
+[0m07:11:16.418494 [debug] [Thread-4 (]: SQL status: SELECT 1000 in 0.040 seconds
+[0m07:11:16.418967 [debug] [Thread-2 (]: On model.my_dbt_project.retention: COMMIT
+[0m07:11:16.420881 [debug] [Thread-4 (]: On model.my_dbt_project.user: COMMIT
+[0m07:11:16.422314 [debug] [Thread-2 (]: Using postgres connection "model.my_dbt_project.retention"
+[0m07:11:16.423408 [debug] [Thread-4 (]: Using postgres connection "model.my_dbt_project.user"
+[0m07:11:16.424962 [debug] [Thread-2 (]: On model.my_dbt_project.retention: COMMIT
+[0m07:11:16.426344 [debug] [Thread-4 (]: On model.my_dbt_project.user: COMMIT
+[0m07:11:16.426975 [debug] [Thread-3 (]: SQL status: SELECT 7000 in 0.055 seconds
+[0m07:11:16.430934 [debug] [Thread-3 (]: On model.my_dbt_project.transaction: COMMIT
+[0m07:11:16.432530 [debug] [Thread-3 (]: Using postgres connection "model.my_dbt_project.transaction"
+[0m07:11:16.433104 [debug] [Thread-2 (]: SQL status: COMMIT in 0.005 seconds
+[0m07:11:16.434416 [debug] [Thread-3 (]: On model.my_dbt_project.transaction: COMMIT
+[0m07:11:16.434767 [debug] [Thread-4 (]: SQL status: COMMIT in 0.006 seconds
+[0m07:11:16.437250 [debug] [Thread-2 (]: On model.my_dbt_project.retention: Close
+[0m07:11:16.439986 [debug] [Thread-4 (]: On model.my_dbt_project.user: Close
+[0m07:11:16.440633 [debug] [Thread-3 (]: SQL status: COMMIT in 0.002 seconds
+[0m07:11:16.443446 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c52259e6-c485-41ad-99a0-618595fa93b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a13ece10>]}
+[0m07:11:16.444617 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c52259e6-c485-41ad-99a0-618595fa93b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a1254bd0>]}
+[0m07:11:16.446137 [debug] [Thread-3 (]: On model.my_dbt_project.transaction: Close
+[0m07:11:16.447413 [info ] [Thread-2 (]: 2 of 4 OK created sql incremental model mart.retention ......................... [[32mSELECT 1000[0m in 0.20s]
+[0m07:11:16.449229 [info ] [Thread-4 (]: 4 of 4 OK created sql incremental model mart.user .............................. [[32mSELECT 1000[0m in 0.20s]
+[0m07:11:16.450973 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c52259e6-c485-41ad-99a0-618595fa93b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a372dc90>]}
+[0m07:11:16.452115 [debug] [Thread-2 (]: Finished running node model.my_dbt_project.retention
+[0m07:11:16.453770 [debug] [Thread-4 (]: Finished running node model.my_dbt_project.user
+[0m07:11:16.455518 [info ] [Thread-3 (]: 3 of 4 OK created sql incremental model mart.transaction ....................... [[32mSELECT 7000[0m in 0.21s]
+[0m07:11:16.459977 [debug] [Thread-3 (]: Finished running node model.my_dbt_project.transaction
+[0m07:11:16.639375 [debug] [Thread-1 (]: SQL status: SELECT 11000 in 0.263 seconds
+[0m07:11:16.642434 [debug] [Thread-1 (]: On model.my_dbt_project.event: COMMIT
+[0m07:11:16.644280 [debug] [Thread-1 (]: Using postgres connection "model.my_dbt_project.event"
+[0m07:11:16.646568 [debug] [Thread-1 (]: On model.my_dbt_project.event: COMMIT
+[0m07:11:16.653402 [debug] [Thread-1 (]: SQL status: COMMIT in 0.005 seconds
+[0m07:11:16.656034 [debug] [Thread-1 (]: On model.my_dbt_project.event: Close
+[0m07:11:16.658348 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c52259e6-c485-41ad-99a0-618595fa93b4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a3757810>]}
+[0m07:11:16.660260 [info ] [Thread-1 (]: 1 of 4 OK created sql incremental model mart.event ............................. [[32mSELECT 11000[0m in 0.42s]
+[0m07:11:16.662048 [debug] [Thread-1 (]: Finished running node model.my_dbt_project.event
+[0m07:11:16.665879 [debug] [MainThread]: On master: COMMIT
+[0m07:11:16.666984 [debug] [MainThread]: Using postgres connection "master"
+[0m07:11:16.668005 [debug] [MainThread]: On master: COMMIT
+[0m07:11:16.669158 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m07:11:16.677063 [debug] [MainThread]: SQL status: COMMIT in 0.008 seconds
+[0m07:11:16.678742 [debug] [MainThread]: On master: Close
+[0m07:11:16.680465 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:11:16.681695 [debug] [MainThread]: Connection 'model.my_dbt_project.transaction' was properly closed.
+[0m07:11:16.682873 [debug] [MainThread]: Connection 'model.my_dbt_project.event' was properly closed.
+[0m07:11:16.684132 [debug] [MainThread]: Connection 'model.my_dbt_project.retention' was properly closed.
+[0m07:11:16.685209 [debug] [MainThread]: Connection 'model.my_dbt_project.user' was properly closed.
+[0m07:11:16.686376 [info ] [MainThread]: 
+[0m07:11:16.687454 [info ] [MainThread]: Finished running 4 incremental models in 0 hours 0 minutes and 0.65 seconds (0.65s).
+[0m07:11:16.689043 [debug] [MainThread]: Command end result
+[0m07:11:16.752919 [debug] [MainThread]: Wrote artifact WritableManifest to /usr/app/dbt/target/manifest.json
+[0m07:11:16.764437 [debug] [MainThread]: Wrote artifact SemanticManifest to /usr/app/dbt/target/semantic_manifest.json
+[0m07:11:16.779096 [debug] [MainThread]: Wrote artifact RunExecutionResult to /usr/app/dbt/target/run_results.json
+[0m07:11:16.780772 [info ] [MainThread]: 
+[0m07:11:16.782262 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m07:11:16.783612 [info ] [MainThread]: 
+[0m07:11:16.785047 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m07:11:16.787398 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.7543038, "process_in_blocks": "0", "process_kernel_time": 0.31558, "process_mem_max_rss": "131296", "process_out_blocks": "0", "process_user_time": 2.205017}
+[0m07:11:16.788806 [debug] [MainThread]: Command `dbt run` succeeded at 07:11:16.788674 after 1.76 seconds
+[0m07:11:16.790162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a4787f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a48ece10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7cd9a57c2390>]}
+[0m07:11:16.791378 [debug] [MainThread]: Flushing usage events
+[0m07:11:18.022462 [debug] [MainThread]: An error was encountered while trying to flush usage events
