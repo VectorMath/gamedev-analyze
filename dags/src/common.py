@@ -1,9 +1,30 @@
+"""
+The python file with common function that using in DAGs.
+"""
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 import src.constants as const
 
 
+def generate_dbt_command(tag_name: str) -> str:
+    """
+    The function generates bash_command for Bash Operator in task.
+
+    :param tag_name: the name of tag that models have
+    :return: dbt command for running
+    """
+    return f"""
+        docker exec dbt_core dbt run --profiles-dir /usr/app/dbt --select tag:{tag_name}
+    """
+
 def update_hwm(table_name: str, schema_name: str) -> PostgresOperator:
+    """
+    The function updates rows in the table high_watermark for specific table
+
+    :param table_name: the name of table in DWH that should be updated
+    :param schema_name: the name of schema in DWH the table belongs to
+    :return: Postgres operator that using for DAG's tasks
+    """
     return PostgresOperator(
         task_id=f"{const.UPDATE_HWM_TASK_ID}__{schema_name}__{table_name}",
         postgres_conn_id=const.DB_CONNECTION_ID,
@@ -27,6 +48,13 @@ def update_hwm(table_name: str, schema_name: str) -> PostgresOperator:
 
 
 def get_params_for_update_hwm(schema_name: str) -> list[tuple[str, str]]:
+    """
+    The function that returns list of tuple
+    for all existing tables for the schema_name in parameter
+
+    :param schema_name: The name of schema in DWH.
+    :return: list of tuple like ('schema_name', 'table_name')
+    """
     hook = PostgresHook(postgres_conn_id=const.DB_CONNECTION_ID)
 
     records = hook.get_records(f"""
@@ -38,6 +66,6 @@ def get_params_for_update_hwm(schema_name: str) -> list[tuple[str, str]]:
         WHERE 
             schema_name = '{schema_name}'
     """
-    )
+                               )
 
     return [(schema, table) for schema, table in records]

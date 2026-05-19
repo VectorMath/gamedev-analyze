@@ -22,13 +22,3 @@ LEFT JOIN
 		ON ev."date" >= ge.start_date
 		AND ev."date" < ge.end_date
 
-
-    WHERE ev.updated_at > (
-        SELECT
-            updated_at
-        FROM
-            "gamedev"."mart"."high_watermark"
-        WHERE
-            table_name = 'event'
-            and schema_name = 'mart'
-    )

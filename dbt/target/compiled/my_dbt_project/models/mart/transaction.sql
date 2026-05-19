@@ -30,13 +30,3 @@ LEFT JOIN
 		ON tr."date" >= ge.start_date
 		AND tr."date" < ge.end_date
 
-
-    WHERE tr.updated_at > (
-        SELECT
-            updated_at
-        FROM
-            "gamedev"."mart"."high_watermark"
-        WHERE
-            table_name = 'transaction'
-            and schema_name = 'mart'
-    )
