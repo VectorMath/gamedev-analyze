@@ -1,5 +1,9 @@
 {{
-    config(materialized='materialized_view')
+    config(
+    materialized='materialized_view',
+    schema='mart',
+    tags=['mv']
+    )
 }}
 WITH cte_amount AS (
 	SELECT
@@ -44,4 +48,4 @@ LEFT JOIN
 	cte_amount
         ON us.id = cte_amount.user_id
 GROUP BY
-	us.id;
+	us.id

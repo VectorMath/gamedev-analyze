@@ -1,5 +1,9 @@
 {{
-    config(materialized='materialized_view')
+    config(
+    materialized='materialized_view',
+    schema='mart',
+    tags=['mv']
+    )
 }}
 WITH transactions_range AS (
     SELECT
