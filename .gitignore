@@ -1,0 +1,8 @@
+/config
+/logs
+/plugins
+/sql_scripts
+/src
+/.idea
+/__pycache__
+.env

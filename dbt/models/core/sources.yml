@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: mart
+    schema: mart
+    tables:
+      - name: high_watermark
+
+  - name: raw_data
+    schema: stage
+    tables:
+      - name: users
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: registration_date
+            tests:
+              - not_null
+      - name: country
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+      - name: region
+      - name: currency
+      - name: platform
+      - name: game_event
+      - name: event_type
+      - name: transactions
+      - name: events

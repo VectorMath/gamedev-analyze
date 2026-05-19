@@ -1,0 +1,12 @@
+my_dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      user: "postgres"
+      password: "123456"
+      dbname: "gamedev"
+      schema: public
+      port: 5432
+      threads: 4
