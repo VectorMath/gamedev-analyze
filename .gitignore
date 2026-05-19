@@ -4,6 +4,7 @@
 /sql_scripts
 /src
 /.idea
+/dbt/target
 /__pycache__
 .env
 __pycache__/

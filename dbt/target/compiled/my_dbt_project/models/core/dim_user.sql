@@ -19,13 +19,3 @@ SELECT
 FROM
 	"gamedev"."stage"."users"
 
-
-    WHERE updated_at > (
-        SELECT
-            updated_at
-        FROM
-            "gamedev"."mart"."high_watermark"
-        WHERE
-            table_name = 'dim_user'
-            and schema_name = 'core'
-    )

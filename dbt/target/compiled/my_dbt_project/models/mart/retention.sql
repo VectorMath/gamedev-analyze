@@ -6,8 +6,6 @@ WITH user_registrations AS (
         registration_date::date AS registration_date
     FROM "gamedev"."core"."dim_user"
     
-        WHERE registration_date >= CURRENT_DATE - INTERVAL '45 days'
-    
 ),
 
 user_activity AS (
@@ -17,7 +15,10 @@ user_activity AS (
     FROM "gamedev"."core"."fact_event"
     WHERE 1=1
         
-            AND date >= CURRENT_DATE - INTERVAL '45 days'
+            AND date BETWEEN
+                (SELECT MIN(registration_date) FROM "gamedev"."core"."dim_user")
+                AND
+                (SELECT MAX(registration_date) + INTERVAL '30 days' FROM "gamedev"."core"."dim_user")
         
 )
 
