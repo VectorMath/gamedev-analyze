@@ -8,28 +8,28 @@ import src.constants as const
 from src.common import update_hwm, get_params_for_update_hwm
 
 with DAG(
-        dag_id="upsert_data_in_core_layer",
+        dag_id=const.DAG_CORE_ID,
         start_date=datetime(2025, 1, 1),
         schedule="@daily",
         catchup=False,
 ) as dag:
     dbt_run = BashOperator(
-        task_id=const.UPSERT_DATA_TO_CORE_TASK_ID,
+        task_id=const.UPSERT_DATA_TASK_ID,
         bash_command="""
         docker exec dbt_core dbt run --profiles-dir /usr/app/dbt --select tag:core
         """
     )
 
-    with TaskGroup(group_id="update_hwm") as update_hwm_group:
-        for schema_name, table_name in get_params_for_update_hwm('core'):
+    with TaskGroup(group_id=const.UPDATE_HWM_GROUP_ID) as update_hwm_group:
+        for schema_name, table_name in get_params_for_update_hwm(const.CORE_LAYER_NAME):
             update_hwm(
                 table_name=table_name,
                 schema_name=schema_name
             )
 
     trigger_mart_layer = TriggerDagRunOperator(
-        task_id="trigger_mart_dag",
-        trigger_dag_id="upsert_data_in_mart_layer",
+        task_id=const.TRIGGER_MART_DAG_TASK_ID,
+        trigger_dag_id=const.DAG_MART_ID,
         wait_for_completion=False
     )
 
