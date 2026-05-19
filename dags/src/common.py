@@ -6,6 +6,17 @@ from airflow.providers.postgres.operators.postgres import PostgresOperator
 import src.constants as const
 
 
+def generate_dbt_command(tag_name: str) -> str:
+    """
+    The function generates bash_command for Bash Operator in task.
+
+    :param tag_name: the name of tag that models have
+    :return: dbt command for running
+    """
+    return f"""
+        docker exec dbt_core dbt run --profiles-dir /usr/app/dbt --select tag:{tag_name}
+    """
+
 def update_hwm(table_name: str, schema_name: str) -> PostgresOperator:
     """
     The function updates rows in the table high_watermark for specific table
