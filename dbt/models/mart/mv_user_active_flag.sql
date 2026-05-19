@@ -1,5 +1,9 @@
 {{
-    config(materialized='materialized_view')
+    config(
+    materialized='materialized_view',
+    schema='mart',
+    tags=['mv']
+    )
 }}
 WITH cte AS (
 	SELECT
@@ -21,4 +25,4 @@ SELECT
 FROM
 	{{ ref('dim_user') }} AS us
 LEFT JOIN cte
-	ON us.id = cte.user_id;
+	ON us.id = cte.user_id
