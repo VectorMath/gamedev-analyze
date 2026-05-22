@@ -1,5 +1,6 @@
 from airflow import DAG
 from airflow.operators.bash import BashOperator
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.utils.task_group import TaskGroup
 
 import src.constants as const
@@ -29,4 +30,10 @@ with DAG(
                 schema_name=schema_name
             )
 
-    dbt_run >> update_hwm_group
+    trigger_mv_dag = TriggerDagRunOperator(
+        task_id=const.TRIGGER_MV_DAG_TASK_ID,
+        trigger_dag_id=const.DAG_MV_ID,
+        wait_for_completion=False
+    )
+
+    dbt_run >> update_hwm_group >> trigger_mv_dag

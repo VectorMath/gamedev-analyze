@@ -1,47 +1,30 @@
 
-      
+      -- back compat for old kwarg name
   
+  
+        
+            
+	    
+	    
+            
+        
     
 
-  create  table "gamedev"."mart"."transaction"
-  
-  
-    as
-  
-  (
     
-SELECT
-	tr.id,
-	tr.user_id,
-	tr."date",
-	cr.code AS currency_code,
-	cr."name" AS currency_name,
-	tr.price_value AS price,
-	tr.price_value * cr.rate_to_usd AS price_usd,
-	pf."name" AS platform,
-	ge."name" AS game_event_title,
-	ge."name" IS NOT NULL AS is_game_event_time,
-	tr.created_at,
-	tr.updated_at
-FROM
-	"gamedev"."core"."fact_transaction" AS tr
-JOIN
-	"gamedev"."core"."dim_currency" AS cr
-		ON tr.currency_id = cr.code_id
-		AND tr."date" >= cr.start_date
-		AND tr."date" < cr.end_date
-JOIN
-	"gamedev"."core"."dim_platform" AS pf
-		ON tr.platform_id = pf.id
-JOIN
-	"gamedev"."core"."dim_user" AS us
-		ON tr.user_id = us.id
-LEFT JOIN
-	"gamedev"."core"."dim_game_event" AS ge
-		ON tr."date" >= ge.start_date
-		AND tr."date" < ge.end_date
+
+    merge into "gamedev"."mart"."transaction" as DBT_INTERNAL_DEST
+        using "transaction__dbt_tmp100901129718" as DBT_INTERNAL_SOURCE
+        on ((DBT_INTERNAL_SOURCE.id = DBT_INTERNAL_DEST.id))
+
+    
+    when matched then update set
+        "id" = DBT_INTERNAL_SOURCE."id","user_id" = DBT_INTERNAL_SOURCE."user_id","date" = DBT_INTERNAL_SOURCE."date","currency_code" = DBT_INTERNAL_SOURCE."currency_code","currency_name" = DBT_INTERNAL_SOURCE."currency_name","price" = DBT_INTERNAL_SOURCE."price","price_usd" = DBT_INTERNAL_SOURCE."price_usd","platform" = DBT_INTERNAL_SOURCE."platform","game_event_title" = DBT_INTERNAL_SOURCE."game_event_title","is_game_event_time" = DBT_INTERNAL_SOURCE."is_game_event_time","created_at" = DBT_INTERNAL_SOURCE."created_at","updated_at" = DBT_INTERNAL_SOURCE."updated_at"
+    
+
+    when not matched then insert
+        ("id", "user_id", "date", "currency_code", "currency_name", "price", "price_usd", "platform", "game_event_title", "is_game_event_time", "created_at", "updated_at")
+    values
+        ("id", "user_id", "date", "currency_code", "currency_name", "price", "price_usd", "platform", "game_event_title", "is_game_event_time", "created_at", "updated_at")
 
 
-  );
-  
   

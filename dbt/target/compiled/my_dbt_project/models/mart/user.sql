@@ -47,3 +47,13 @@ LEFT JOIN
 	"gamedev"."core"."dim_region" AS re
 		ON cntr.region_id = re.id
 
+
+    WHERE us.updated_at > (
+        SELECT
+            updated_at
+        FROM
+            "gamedev"."mart"."high_watermark"
+        WHERE
+            table_name = 'user'
+            and schema_name = 'mart'
+    )
