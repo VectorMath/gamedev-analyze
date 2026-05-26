@@ -13,7 +13,7 @@
     
 
     merge into "gamedev"."mart"."retention" as DBT_INTERNAL_DEST
-        using "retention__dbt_tmp100901123448" as DBT_INTERNAL_SOURCE
+        using "retention__dbt_tmp113308456991" as DBT_INTERNAL_SOURCE
         on ((DBT_INTERNAL_SOURCE.user_id = DBT_INTERNAL_DEST.user_id))
 
     

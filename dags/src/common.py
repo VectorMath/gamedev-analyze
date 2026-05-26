@@ -1,9 +1,14 @@
 """
 The python file with common function that using in DAGs.
 """
+from datetime import datetime
+
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.providers.postgres.operators.postgres import PostgresOperator
+from airflow.utils.email import send_email
 import src.constants as const
+import pandas as pd
+import requests
 
 
 def generate_dbt_command(tag_name: str) -> str:
@@ -16,6 +21,7 @@ def generate_dbt_command(tag_name: str) -> str:
     return f"""
         docker exec dbt_core dbt run --profiles-dir /usr/app/dbt --select tag:{tag_name}
     """
+
 
 def update_hwm(table_name: str, schema_name: str) -> PostgresOperator:
     """
@@ -69,3 +75,31 @@ def get_params_for_update_hwm(schema_name: str) -> list[tuple[str, str]]:
                                )
 
     return [(schema, table) for schema, table in records]
+
+def is_first_day_of_month():
+    """
+    The function checks is today first day of month or not.
+    :return: boolean value (True if today is first day of month)
+    """
+    return datetime.now().day == 1
+
+def generate_csv_by_sql(sql_query: str, path: str) -> None:
+    """
+    The function generates CSV-file with transaction for monthly report by Europe clients.
+    :param path: the path where CSV-file should be saved.
+    :param sql_query: the query that will prepare table for CSV.
+    """
+    hook = PostgresHook(postgres_conn_id=const.DB_CONNECTION_ID)
+    df: pd.DataFrame = hook.get_pandas_df(sql_query)
+
+    df.to_csv(path, index=False)
+
+
+def send_telegram_report(path_to_file: str):
+
+    with open(path_to_file, 'rb') as f:
+        requests.post(
+            f'https://api.telegram.org/bot{const.TG_BOT_TOKEN}/sendDocument',
+            data={'chat_id': const.CHAT_ID},
+            files={'document': f}
+        )

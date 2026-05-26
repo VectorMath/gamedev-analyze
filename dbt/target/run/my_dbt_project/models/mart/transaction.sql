@@ -13,7 +13,7 @@
     
 
     merge into "gamedev"."mart"."transaction" as DBT_INTERNAL_DEST
-        using "transaction__dbt_tmp100901129718" as DBT_INTERNAL_SOURCE
+        using "transaction__dbt_tmp113308435842" as DBT_INTERNAL_SOURCE
         on ((DBT_INTERNAL_SOURCE.id = DBT_INTERNAL_DEST.id))
 
     
