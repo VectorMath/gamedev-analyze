@@ -11,7 +11,9 @@ The DAG has second pipeline:
 
  - Running dbt models to upsert data from core layer to mart layer;
 
- - Update rows in high_watermark table for each mart table.
+ - Update rows in high_watermark table for each mart table;
+ 
+ - Trigger DAG DAG_MV_ID.
 """
 with DAG(
         dag_id=const.DAG_MART_ID,

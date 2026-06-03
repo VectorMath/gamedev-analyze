@@ -6,8 +6,11 @@ from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from src.common import generate_dbt_command
 
 """
-The DAG generates materialized views in mart layer 
-after upsert data in mart layer
+The DAG has second pipeline:
+
+ - Generates materialized views in mart layer;
+
+ - Trigger DAG DAG_MONTHLY_REPORT_ID;
 """
 with DAG(
         dag_id=const.DAG_MV_ID,

@@ -5,8 +5,15 @@ import src.constants as const
 from src.common import generate_csv_by_sql, send_telegram_report, is_first_day_of_month
 
 """
-The DAG generates materialized views in mart layer 
-after upsert data in mart layer
+The DAG has second pipeline:
+
+ - Check for first day of current month
+ 
+ - In case it's not first day it will skip next tasks;
+ 
+ - In case it's first day, it will generate CSV file with date by using SQL query below;
+ 
+ - Sends CSV file in Telegram by using bot.
 """
 with DAG(
         dag_id=const.DAG_MONTHLY_REPORT_ID,
