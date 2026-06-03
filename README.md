@@ -5,6 +5,7 @@
 * ### [Introduction](#introduction-1)
 * ### [Project Components](#project-components-1)
 * ### [Technology Stack](#technology-stack-1)
+* ### [DBT Models screenshot](#dbt-models-1screenshot-1)
 * ### [DAG Dependencies](#dag-dependencies-1)
   * ### [Page "User"](#page-user-1)
   * ### [Page "LTV"](#page-ltv-1)
@@ -65,6 +66,14 @@ The project showcases modern Data Engineering and Analytics practices by integra
 * ### `Power BI`
 * ### `dbt`
 * ### `Jupyter Notebook`
+
+---
+
+## DBT Models screenshot
+
+![dbt_tree](docs/main_page/dbt_tree.jpg)
+
+---
 
 ## DAG Dependencies
 
