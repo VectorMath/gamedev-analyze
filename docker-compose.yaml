@@ -60,6 +60,8 @@ services:
     depends_on:
       - postgres
     tty: true
+    ports:
+      - "8081:8081"
 
   airflow-webserver:
     <<: *airflow-common
