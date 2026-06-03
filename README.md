@@ -14,7 +14,7 @@
   * ### [Stage Layer](#Stage-Layer)
   * ### [Core Layer](#Core-Layer)
   * ### [Mart Layer](#Mart-Layer)
-* ### [Project Structure](#project-structure)
+* ### [Project Structure](#project-structure-1)
 
 ## Introduction
 
