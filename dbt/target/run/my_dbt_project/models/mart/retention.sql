@@ -1,30 +1,83 @@
 
-      -- back compat for old kwarg name
+      
+  
+    
+
+  create  table "gamedev"."mart"."retention"
   
   
+    as
+  
+  (
+    
+
+WITH user_registrations AS (
+    SELECT
+        id AS user_id,
+        registration_date::date AS registration_date
+    FROM "gamedev"."core"."dim_user"
+    
+),
+
+user_activity AS (
+    SELECT DISTINCT
+        user_id,
+        date::date AS activity_date
+    FROM "gamedev"."core"."fact_event"
+    WHERE 1=1
         
-            
-	    
-	    
-            
+            AND date BETWEEN
+                (SELECT MIN(registration_date) FROM "gamedev"."core"."dim_user")
+                AND
+                (SELECT MAX(registration_date) + INTERVAL '30 days' FROM "gamedev"."core"."dim_user")
         
-    
+)
 
-    
-
-    merge into "gamedev"."mart"."retention" as DBT_INTERNAL_DEST
-        using "retention__dbt_tmp113308456991" as DBT_INTERNAL_SOURCE
-        on ((DBT_INTERNAL_SOURCE.user_id = DBT_INTERNAL_DEST.user_id))
-
-    
-    when matched then update set
-        "user_id" = DBT_INTERNAL_SOURCE."user_id","registration_date" = DBT_INTERNAL_SOURCE."registration_date","retention_d1" = DBT_INTERNAL_SOURCE."retention_d1","retention_d7" = DBT_INTERNAL_SOURCE."retention_d7","retention_d14" = DBT_INTERNAL_SOURCE."retention_d14","retention_d30" = DBT_INTERNAL_SOURCE."retention_d30","created_at" = DBT_INTERNAL_SOURCE."created_at","updated_at" = DBT_INTERNAL_SOURCE."updated_at"
-    
-
-    when not matched then insert
-        ("user_id", "registration_date", "retention_d1", "retention_d7", "retention_d14", "retention_d30", "created_at", "updated_at")
-    values
-        ("user_id", "registration_date", "retention_d1", "retention_d7", "retention_d14", "retention_d30", "created_at", "updated_at")
-
-
+SELECT
+    r.user_id,
+    r.registration_date,
+    BOOL_OR(
+        CASE
+            WHEN a.activity_date = r.registration_date + INTERVAL '1 day'
+                THEN TRUE
+                ELSE FALSE
+        END
+    ) AS retention_d1,
+    BOOL_OR(
+        CASE
+            WHEN a.activity_date = r.registration_date + INTERVAL '7 days'
+                THEN TRUE
+                ELSE FALSE
+        END
+    ) AS retention_d7,
+    BOOL_OR(
+        CASE
+            WHEN a.activity_date = r.registration_date + INTERVAL '14 days'
+                THEN TRUE
+                ELSE FALSE
+        END
+    ) AS retention_d14,
+    BOOL_OR(
+        CASE
+            WHEN a.activity_date = r.registration_date + INTERVAL '30 days'
+                THEN TRUE
+                ELSE FALSE
+        END
+    ) AS retention_d30,
+    CURRENT_TIMESTAMP AS created_at,
+    CURRENT_TIMESTAMP AS updated_at
+FROM
+    user_registrations AS r
+LEFT JOIN
+    user_activity AS a
+        ON r.user_id = a.user_id
+        AND a.activity_date BETWEEN
+            r.registration_date
+            AND
+            r.registration_date + INTERVAL '30 days'
+GROUP BY
+    r.user_id,
+    r.registration_date
+  );
+  
   

@@ -1,30 +1,64 @@
 
-      -- back compat for old kwarg name
+      
+  
+    
+
+  create  table "gamedev"."mart"."user"
   
   
-        
-            
-	    
-	    
-            
-        
+    as
+  
+  (
     
+WITH user_feature AS (
+	SELECT
+		*,
+		DATE_PART(
+		'year',
+		AGE(CURRENT_DATE, birth_date)
+	) AS years_old,
+	(
+		DATE_PART('year', AGE(CURRENT_DATE, registration_date)) * 12
+		+
+		DATE_PART('month', AGE(CURRENT_DATE, registration_date))
+	)::INT AS months_in_game
+	FROM
+		"gamedev"."core"."dim_user"
+)
+SELECT
+	us.id,
+	CONCAT(us.first_name, ' ', us.last_name) AS user_name,
+	re."name" AS region,
+	cntr."name" AS country,
+	us.gender,
+	us.birth_date,
+	us.years_old,
+	CASE
+		WHEN us.years_old < 14
+			THEN 'Kid'
+		WHEN us.years_old BETWEEN 14 AND 20
+			THEN 'Teenager'
+		WHEN us.years_old BETWEEN 21 AND 29
+			THEN 'Young'
+		WHEN us.years_old BETWEEN 30 AND 50
+			THEN 'Adult'
+		ELSE
+			'Pensioner'
+	END AS age_group,
+	us.registration_date,
+	us.months_in_game,
+	us.created_at,
+	us.updated_at
+FROM
+	user_feature AS us
+LEFT JOIN
+	"gamedev"."core"."dim_country" AS cntr
+		ON us.country_id = cntr.id
+LEFT JOIN
+	"gamedev"."core"."dim_region" AS re
+		ON cntr.region_id = re.id
 
-    
 
-    merge into "gamedev"."mart"."user" as DBT_INTERNAL_DEST
-        using "user__dbt_tmp113308483945" as DBT_INTERNAL_SOURCE
-        on ((DBT_INTERNAL_SOURCE.id = DBT_INTERNAL_DEST.id))
-
-    
-    when matched then update set
-        "id" = DBT_INTERNAL_SOURCE."id","user_name" = DBT_INTERNAL_SOURCE."user_name","region" = DBT_INTERNAL_SOURCE."region","country" = DBT_INTERNAL_SOURCE."country","gender" = DBT_INTERNAL_SOURCE."gender","birth_date" = DBT_INTERNAL_SOURCE."birth_date","years_old" = DBT_INTERNAL_SOURCE."years_old","age_group" = DBT_INTERNAL_SOURCE."age_group","registration_date" = DBT_INTERNAL_SOURCE."registration_date","months_in_game" = DBT_INTERNAL_SOURCE."months_in_game","created_at" = DBT_INTERNAL_SOURCE."created_at","updated_at" = DBT_INTERNAL_SOURCE."updated_at"
-    
-
-    when not matched then insert
-        ("id", "user_name", "region", "country", "gender", "birth_date", "years_old", "age_group", "registration_date", "months_in_game", "created_at", "updated_at")
-    values
-        ("id", "user_name", "region", "country", "gender", "birth_date", "years_old", "age_group", "registration_date", "months_in_game", "created_at", "updated_at")
-
-
+  );
+  
   

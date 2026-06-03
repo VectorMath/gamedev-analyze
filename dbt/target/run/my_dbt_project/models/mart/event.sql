@@ -1,30 +1,39 @@
 
-      -- back compat for old kwarg name
+      
+  
+    
+
+  create  table "gamedev"."mart"."event"
   
   
-        
-            
-	    
-	    
-            
-        
+    as
+  
+  (
     
+SELECT
+	ev.id,
+	ev.user_id,
+	ev."date",
+	et."type",
+	p."name" AS platform,
+	ge."name" AS game_event_title,
+	ge."name" IS NOT NULL AS is_game_event_time,
+	ev.created_at,
+	ev.updated_at
+FROM
+	"gamedev"."core"."fact_event" AS ev
+JOIN
+	"gamedev"."core"."dim_event_type" AS et
+		ON ev.event_type = et.id
+JOIN
+	"gamedev"."core"."dim_platform" AS p
+		ON ev.platform_id = p.id
+LEFT JOIN
+	"gamedev"."core"."dim_game_event" AS ge
+		ON ev."date" >= ge.start_date
+		AND ev."date" < ge.end_date
 
-    
 
-    merge into "gamedev"."mart"."event" as DBT_INTERNAL_DEST
-        using "event__dbt_tmp113308428691" as DBT_INTERNAL_SOURCE
-        on ((DBT_INTERNAL_SOURCE.id = DBT_INTERNAL_DEST.id))
-
-    
-    when matched then update set
-        "id" = DBT_INTERNAL_SOURCE."id","user_id" = DBT_INTERNAL_SOURCE."user_id","date" = DBT_INTERNAL_SOURCE."date","type" = DBT_INTERNAL_SOURCE."type","platform" = DBT_INTERNAL_SOURCE."platform","game_event_title" = DBT_INTERNAL_SOURCE."game_event_title","is_game_event_time" = DBT_INTERNAL_SOURCE."is_game_event_time","created_at" = DBT_INTERNAL_SOURCE."created_at","updated_at" = DBT_INTERNAL_SOURCE."updated_at"
-    
-
-    when not matched then insert
-        ("id", "user_id", "date", "type", "platform", "game_event_title", "is_game_event_time", "created_at", "updated_at")
-    values
-        ("id", "user_id", "date", "type", "platform", "game_event_title", "is_game_event_time", "created_at", "updated_at")
-
-
+  );
+  
   
