@@ -2,18 +2,18 @@
 
 ## Table of contents
 
-* ### [Introduction](#Introduction)
-* ### [Project Components](#Project-Components)
-* ### [Technology Stack](#Technology-Stack)
-* ### [DAG Dependencies](#DAG-Dependencies)
-  * ### [Page "User"](#Page-User)
-  * ### [Page "LTV"](#Page-LTV)
-  * ### [Page "ARPU vs ARPPU"](#Page-ARPU-vs-ARPPU)
-  * ### [Page "Transaction"](#Page-Transaction)
-* ### [DWH Architecture](#DWH-Architecture)
-  * ### [Stage Layer](#Stage-Layer)
-  * ### [Core Layer](#Core-Layer)
-  * ### [Mart Layer](#Mart-Layer)
+* ### [Introduction](#introduction-1)
+* ### [Project Components](#project-components-1)
+* ### [Technology Stack](#technology-stack-1)
+* ### [DAG Dependencies](#dag-dependencies-1)
+  * ### [Page "User"](#page-user-1)
+  * ### [Page "LTV"](#page-ltv-1)
+  * ### [Page "ARPU vs ARPPU"](#page-arpu-vs-arppu-1)
+  * ### [Page "Transaction"](#page-transaction-1)
+* ### [DWH Architecture](#dwh-architecture-1)
+  * ### [Stage Layer](#stage-Layer-1)
+  * ### [Core Layer](#core-Layer-1)
+  * ### [Mart Layer](#mart-layer-1)
 * ### [Project Structure](#project-structure-1)
 
 ## Introduction
