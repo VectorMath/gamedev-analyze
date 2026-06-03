@@ -10,3 +10,4 @@
 __pycache__/
 *.pyc
 /dbt/logs/
+/.ipynb_checkpoints
